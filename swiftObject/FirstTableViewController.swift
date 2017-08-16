@@ -31,9 +31,8 @@ class FirstTableViewController: UITableViewController {
         print("\(country.name)'s capital city is called \(country.capitalCity.name)")
         
         
-        let dic :Dictionary = ["username": "bdrugs",
-                               "password": "888888"]
-        
+ 
+        //写在外部的网络请求
         let manager : AFHTTPSessionManager = AFHTTPSessionManager.init()
         
         manager.requestSerializer = AFHTTPRequestSerializer()
@@ -44,7 +43,7 @@ class FirstTableViewController: UITableViewController {
        manager.securityPolicy.validatesDomainName = false
         let contentTypes: Set = ["application/json", "text/json", "text/javascript","text/html", "application/x-javascript"]
         manager.responseSerializer.acceptableContentTypes = contentTypes
-        manager.post("http://test.5d8.yicheng120.com/api/user/login", parameters: dic, progress: nil, success: { (task :URLSessionDataTask, data:Any) in
+        manager.post("url", parameters: "参数", progress: nil, success: { (task :URLSessionDataTask, data:Any) in
             print(data)
             
             }, failure: { (task:URLSessionDataTask, error:Error ) in

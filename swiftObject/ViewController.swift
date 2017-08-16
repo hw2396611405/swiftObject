@@ -21,13 +21,7 @@ class ViewController: UIViewController {
        self.view.addSubview(label)
        self.setsubView()
         
-        let dic :Dictionary = ["username": "bdrugs",
-                               "password": "888888"]
-        SwiftHttpNetwork.POST(URLString: "", parameters: dic, completion: { (task) in
-            print("+++++++",task)
-        }) { (error) in
-            print("--------",error)
-        }
+     //调用网络请求
     
     }
     
