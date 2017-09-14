@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		491A67931F43D5CF002D1219 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A67921F43D5CF002D1219 /* Account.swift */; };
+		4955B5C11F6A6D640065CC39 /* headerPCH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4955B5C01F6A6D640065CC39 /* headerPCH.swift */; };
+		4955B5C31F6A6ECB0065CC39 /* SwiftHttpNetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4955B5C21F6A6ECB0065CC39 /* SwiftHttpNetworkAPI.swift */; };
 		49638AC81F41492A007BF4C3 /* SwiftHttpNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49638AC71F41492A007BF4C3 /* SwiftHttpNetwork.swift */; };
 		5FB6CBAE4D6D65F7464D2FF4 /* libPods-swiftObject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB3334157EBB8EA216DA835F /* libPods-swiftObject.a */; };
 		CE0169B31EB8684E00A47705 /* FirstTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0169B11EB8684E00A47705 /* FirstTableViewController.swift */; };
@@ -52,6 +55,9 @@
 
 /* Begin PBXFileReference section */
 		32252419165CF6FD7335E867 /* Pods-swiftObject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftObject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swiftObject/Pods-swiftObject.debug.xcconfig"; sourceTree = "<group>"; };
+		491A67921F43D5CF002D1219 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		4955B5C01F6A6D640065CC39 /* headerPCH.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = headerPCH.swift; sourceTree = "<group>"; };
+		4955B5C21F6A6ECB0065CC39 /* SwiftHttpNetworkAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftHttpNetworkAPI.swift; sourceTree = "<group>"; };
 		49638AC71F41492A007BF4C3 /* SwiftHttpNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftHttpNetwork.swift; sourceTree = "<group>"; };
 		4CFC30B18863A2A3362F08B8 /* Pods-swiftObject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftObject.release.xcconfig"; path = "Pods/Target Support Files/Pods-swiftObject/Pods-swiftObject.release.xcconfig"; sourceTree = "<group>"; };
 		CE0169B11EB8684E00A47705 /* FirstTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTableViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +118,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		491A678C1F43D530002D1219 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				491A678D1F43D530002D1219 /* API */,
+				491A678E1F43D530002D1219 /* Modle */,
+				491A678F1F43D530002D1219 /* Source */,
+				491A67901F43D530002D1219 /* VC */,
+				491A67911F43D530002D1219 /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		491A678D1F43D530002D1219 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		491A678E1F43D530002D1219 /* Modle */ = {
+			isa = PBXGroup;
+			children = (
+				491A67921F43D5CF002D1219 /* Account.swift */,
+			);
+			path = Modle;
+			sourceTree = "<group>";
+		};
+		491A678F1F43D530002D1219 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		491A67901F43D530002D1219 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		491A67911F43D530002D1219 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		49638AC31F41484E007BF4C3 /* APPDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +177,7 @@
 		49638AC41F41484E007BF4C3 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				491A678C1F43D530002D1219 /* Login */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -139,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				49638AC71F41492A007BF4C3 /* SwiftHttpNetwork.swift */,
+				4955B5C21F6A6ECB0065CC39 /* SwiftHttpNetworkAPI.swift */,
 			);
 			path = HttpNetwork;
 			sourceTree = "<group>";
@@ -170,6 +226,7 @@
 				B51C33B2E2F6209B4B6594D8 /* Pods */,
 				B8D9BB101D1FA6DB1982886F /* Frameworks */,
 				CE66E2DD1EBACB60001DA145 /* swiftObject-Bridging-Header.h */,
+				4955B5C01F6A6D640065CC39 /* headerPCH.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -448,16 +505,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4955B5C11F6A6D640065CC39 /* headerPCH.swift in Sources */,
 				49638AC81F41492A007BF4C3 /* SwiftHttpNetwork.swift in Sources */,
 				CE66E2EC1EBAF6E4001DA145 /* BaseNavigationViewController.swift in Sources */,
 				CEA68B041F171E500028178F /* YCTabbar.swift in Sources */,
 				CE551C851EB829FF006E673B /* ViewController.swift in Sources */,
 				CECD94971EB96F1800728E9D /* Student.swift in Sources */,
+				491A67931F43D5CF002D1219 /* Account.swift in Sources */,
 				CE66E2E91EBAF29A001DA145 /* thirdViewController.swift in Sources */,
 				CEA68B061F1751BE0028178F /* YCTabbarBigButton.swift in Sources */,
 				CE551C831EB829FF006E673B /* AppDelegate.swift in Sources */,
 				CE66E2E51EBAEF44001DA145 /* SecondViewController.swift in Sources */,
 				CE551CB41EB83020006E673B /* Person.swift in Sources */,
+				4955B5C31F6A6ECB0065CC39 /* SwiftHttpNetworkAPI.swift in Sources */,
 				CE551C8B1EB829FF006E673B /* swiftObject.xcdatamodeld in Sources */,
 				CE66E2E21EBAEBDF001DA145 /* BaseViewController.swift in Sources */,
 				CE0169B31EB8684E00A47705 /* FirstTableViewController.swift in Sources */,
@@ -619,6 +679,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 56WBM4KGGP;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = swiftObject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yicheng.swiftObject;
@@ -637,6 +698,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 56WBM4KGGP;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = swiftObject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yicheng.swiftObject;

@@ -50,8 +50,8 @@ class SwiftHttpNetwork: AFHTTPSessionManager {
 
         let contentTypes: Set = ["application/json", "text/json", "text/javascript","text/html", "application/x-javascript"]
         SwiftHttpNetwork.networkManager?.responseSerializer.acceptableContentTypes = contentTypes
-
-        SwiftHttpNetwork.networkManager?.post("http://test.5d8.yicheng120.com/api/user/login", parameters: parameters, progress: nil, success: { (task :URLSessionDataTask, data:Any) in
+        let urlsting :String  = kBaseUrlApi + URLString
+        SwiftHttpNetwork.networkManager?.post(urlsting, parameters: parameters, progress: nil, success: { (task :URLSessionDataTask, data:Any) in
           return completion(data)
             
         }, failure: { (task:URLSessionDataTask, error:Error ) in

@@ -21,7 +21,16 @@ class ViewController: UIViewController {
        self.view.addSubview(label)
        self.setsubView()
         
-     //调用网络请求
+        let dic :Dictionary = ["username": "bdrugs",
+                               "password": "888888"]
+        SwiftHttpNetwork.POST(URLString: userLogin , parameters: dic, completion: { (task) in
+            let  account = Account()
+            account.mj_setKeyValues(task)
+            print("+++++++",account.access_token ?? String())
+            
+        }) { (error) in
+            print("--------",error)
+        }
     
     }
     
@@ -52,9 +61,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var pushAction: UIButton!
 
     @IBAction func push(_ sender: Any) {
-        let vc = FirstTableViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        
+//        let vc = FirstTableViewController()
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+ 
 
 }
 
