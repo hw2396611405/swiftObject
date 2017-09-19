@@ -41,15 +41,16 @@ class ViewController: UIViewController {
        print(arithmeticMean(1,2,3,4,5))
         
         
+    //闭包
         let digitNames = [
             0: "Zero", 1: "One", 2: "Two",   3: "Three", 4: "Four",
             5: "Five", 6: "Six", 7: "Seven", 8: "Eight", 9: "Nine"
         ]
-        
-        //尾随闭包语法 
         let numbers = [16, 58, 510]
         print(numStr(numbers, _digitNames:digitNames))
-        
+
+    //尾随闭包
+        self.numToStr()
      
     
     }
@@ -142,9 +143,6 @@ class ViewController: UIViewController {
     
     
     // 闭包
-    
-    //1.3 尾随闭包
-    
     func numStr(_ numbers:[Int], _digitNames:[Int:String]) -> ([String]) {
         let strings = numbers.map {
             (number) -> String in
@@ -158,7 +156,29 @@ class ViewController: UIViewController {
         }
         return strings
     }
+        //1.3 尾随闭包
+    /*如果你需要将一个很长的闭包表达式作为最后一个参数传递给函数，可以使用尾随闭包来增强函数的可读性。尾随闭包是一个书写在函数括号之后的闭包表达式，函数支持将其作为最后一个参数调用。在使用尾随闭包时，你不用写出它的参数标签*/
     
+    func numToStr ()  {
+        
+        let digitNames = [
+            0: "Zero", 1: "One", 2: "Two",   3: "Three", 4: "Four",
+            5: "Five", 6: "Six", 7: "Seven", 8: "Eight", 9: "Nine"
+        ]
+        let numbers = [16, 58, 510]
+        let strings = numbers.map {
+            (number) -> String in
+            var number = number
+            var output = ""
+            repeat {
+                output = digitNames[number % 10]! + output
+                number /= 10
+            } while number > 0
+            return output
+        }
+        print(strings)
+        
+    }
     
 
 }
