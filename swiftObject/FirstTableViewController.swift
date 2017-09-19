@@ -50,6 +50,21 @@ class FirstTableViewController: UITableViewController {
             }, failure: { (task:URLSessionDataTask, error:Error ) in
                 
         } as? (URLSessionDataTask?, Error) -> Void)
+        
+        //for 循环  和if判断
+//        for  i in 1...5 {
+//            for j in 1...5 {
+//                for k in 1...5 {
+//                    if (i != j  && i != k  && j != k) {
+//                        print(i,j,k)
+//                    }
+//                }
+//            }
+//        }
+        
+       
+        
+        
     }
     
     
