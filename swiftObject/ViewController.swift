@@ -32,13 +32,29 @@ class ViewController: UIViewController {
             print("--------",error)
         }
         
-        if let bounds = minMax(array: [8, -6, 2, 109, 3, 71]) {
-            print("min is \(bounds.min) and max is \(bounds.max)")
-        }
+//        if let bounds = minMax(array: [8, -6, 2, 109, 3, 71]) {
+//            print("min is \(bounds.min) and max is \(bounds.max)")
+//        }
         
-        print(greet(person: "Bill", from: "Cupertino"))
+//        print(greet(person: "Bill", from: "Cupertino"))
+        //调用可变参数函数
+       print(arithmeticMean(1,2,3,4,5))
+        
+        
+        let digitNames = [
+            0: "Zero", 1: "One", 2: "Two",   3: "Three", 4: "Four",
+            5: "Five", 6: "Six", 7: "Seven", 8: "Eight", 9: "Nine"
+        ]
+        
+        //尾随闭包语法 
+        let numbers = [16, 58, 510]
+        print(numStr(numbers, _digitNames:digitNames))
+        
+     
     
     }
+    
+    
     
     func setsubView() {
         print("我要布子视图")
@@ -68,8 +84,8 @@ class ViewController: UIViewController {
 
     @IBAction func push(_ sender: Any) {
         
-//        let vc = FirstTableViewController()
-//        self.navigationController?.pushViewController(vc, animated: true)
+        let vc = FirstTableViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     // 函数类型
@@ -110,6 +126,40 @@ class ViewController: UIViewController {
         
         return "Hello \(person)!  Glad you could visit from \(hometown)."
     }
+    
+   // 可变参数
+    func arithmeticMean(_ numbers:Double...) -> Double {
+        var total :Double = 0
+        for number in numbers {
+         total += number
+        }
+        return total/Double(numbers.count)
+    }
+    
+    //函数类型作为参数类型 (Int, Int) -> Int
+    
+    //函数类型作为返回类型 (Int) -> Int
+    
+    
+    // 闭包
+    
+    //1.3 尾随闭包
+    
+    func numStr(_ numbers:[Int], _digitNames:[Int:String]) -> ([String]) {
+        let strings = numbers.map {
+            (number) -> String in
+            var number = number
+            var output = ""
+            repeat {
+                output = _digitNames[number % 10]! + output
+                number /= 10
+            } while number > 0
+            return output
+        }
+        return strings
+    }
+    
+    
 
 }
 
