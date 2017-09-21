@@ -11,8 +11,13 @@ import UIKit
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
+        let MyColor = "MYColor"
         super.viewDidLoad()
-        self.navigationController?.navigationBar.barTintColor = UIColor.green
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.barTintColor = UIColor.init(named:MyColor)
+        } else {
+            // Fallback on earlier versions
+        }
         let name :String = "你好"
         let label  = UILabel(frame:CGRect(x:100,y:100,width:50,height:50))
         label.text = name
